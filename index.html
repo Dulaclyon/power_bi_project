@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Power BI Portfolio</title>
+  <title>My Power BI Portfolio</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      height: 100vh;
+    }
+    .sidebar h2 {
+      font-size: 16px;
+    }
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+    }
+    .sidebar a:hover {
+      color: #007acc;
+    }
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 90vh;
+      border: none;
+    }
+  </style>
 </head>
-<body style="text-align: center; font-family: sans-serif;">
-  <h1>📊 My Power BI Report</h1>
-  <iframe title="Project Day 1" 
-    width="100%" 
-    height="800" 
-    src="https://app.powerbi.com/view?r=eyJrIjoiOWE1MDYyYWMtZTUxNi00NThmLWE2NGMtYmVmYjhiZDUyZjgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9" 
-    frameborder="0" allowFullScreen="true"></iframe>
-  <p>Report created in Power BI and published using GitHub Pages</p>
+<body>
+
+  <div class="sidebar">
+    <h2>📊 My Projects</h2>
+    <a onclick="loadReport('initial')">Initial Project</a>
+    <a onclick="loadReport('day1')">Day 1 Project</a>
+  </div>
+
+  <div class="content">
+    <iframe id="reportFrame" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiODcyODE4MTMtM2Y5YS00MTJiLWE0ZDMtMzE4NTA3OGNjZmE5IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function loadReport(project) {
+      const reportLinks = {
+        "initial": "https://app.powerbi.com/view?r=eyJrIjoiODcyODE4MTMtM2Y5YS00MTJiLWE0ZDMtMzE4NTA3OGNjZmE5IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
+        "day1": "https://app.powerbi.com/view?r=eyJrIjoiOWE1MDYyYWMtZTUxNi00NThmLWE2NGMtYmVmYjhiZDUyZjgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9"
+      };
+      document.getElementById('reportFrame').src = reportLinks[project];
+    }
+  </script>
+
 </body>
 </html>
