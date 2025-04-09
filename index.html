@@ -9,13 +9,15 @@
       display: flex;
     }
     .sidebar {
-      width: 200px;
+      width: 220px;
       background-color: #f1f1f1;
       padding: 20px;
       height: 100vh;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     }
     .sidebar h2 {
-      font-size: 16px;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
     .sidebar a {
       display: block;
@@ -23,9 +25,11 @@
       text-decoration: none;
       color: #333;
       cursor: pointer;
+      padding: 10px;
+      border-radius: 4px;
     }
     .sidebar a:hover {
-      color: #007acc;
+      background-color: #ddd;
     }
     .content {
       flex-grow: 1;
@@ -48,16 +52,16 @@
   </div>
 
   <div class="content">
-    <iframe id="reportFrame" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiODcyODE4MTMtM2Y5YS00MTJiLWE0ZDMtMzE4NTA3OGNjZmE5IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9" allowfullscreen></iframe>
+    <!-- Default report shown -->
+    <iframe id="reportFrame" src="https://app.powerbi.com/view?r=eyJrIjoiODcyODE4MTMtM2Y5YS00MTJiLWE0ZDMtMzE4NTA3OGNjZmE5IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9" allowfullscreen></iframe>
   </div>
 
   <script>
     function loadReport(project) {
       const reportLinks = {
-        "initial": "https://app.powerbi.com/view?r=eyJrIjoiODcyODE4MTMtM2Y5YS00MTJiLWE0ZDMtMzE4NTA3OGNjZmE5IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
-        "day1": "https://app.powerbi.com/view?r=eyJrIjoiOWE1MDYyYWMtZTUxNi00NThmLWE2NGMtYmVmYjhiZDUyZjgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9"
-        "salary" : "https://app.powerbi.com/view?r=eyJrIjoiNzI4NTgxZGEtZGQ0NS00ZjNmLWFhNGYtZWU3ODA5ZTgxNWE0IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9"
+        initial: "https://app.powerbi.com/view?r=eyJrIjoiODcyODE4MTMtM2Y5YS00MTJiLWE0ZDMtMzE4NTA3OGNjZmE5IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
+        day1: "https://app.powerbi.com/view?r=eyJrIjoiOWE1MDYyYWMtZTUxNi00NThmLWE2NGMtYmVmYjhiZDUyZjgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
+        salary: "https://app.powerbi.com/view?r=eyJrIjoiNzI4NTgxZGEtZGQ0NS00ZjNmLWFhNGYtZWU3ODA5ZTgxNWE0IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9"
       };
       document.getElementById('reportFrame').src = reportLinks[project];
     }
