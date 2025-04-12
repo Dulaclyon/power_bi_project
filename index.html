@@ -9,7 +9,7 @@
   <div class="sidebar">
     <h2>📊 My Reports</h2>
     <ul>
-      <li><a onclick="loadReport('Churn Rate')">Customer Churn Rate</a></li>
+      <li><a onclick="loadReport('churnrate')">Customer Churn Rate</a></li>
       <li><a onclick="loadReport('initial')">Initial Project</a></li>
       <li><a onclick="loadReport('day1')">Day 1 Project</a></li>
       <li><a onclick="loadReport('salary')">Salary Project</a></li>
@@ -26,6 +26,7 @@
   <script>
     function loadReport(name) {
       const titles = {
+        chunrate: "Churn Rate",
         initial: "Initial Project",
         day1: "Day 1 Project",
         salary: "Salary Project"
