@@ -9,6 +9,7 @@
   <div class="sidebar">
     <h2>📊 Shenglan's Portfolio</h2>
     <ul>
+        <li><a onclick="loadReport('marketingcmp')">Sales Analytics</a></li>
       <li><a onclick="loadReport('churnrate')">Customer Churn Rate</a></li>
       <li><a onclick="loadReport('initial')">Initial Project</a></li>
       <li><a onclick="loadReport('day1')">Day 1 Project</a></li>
@@ -16,9 +17,9 @@
     </ul>
   </div>
   <div class="main">
-    <h1 id="report-title">Customer Churn Rate</h1>
+    <h1 id="report-title">Sales Analytics for marketing</h1>
     <iframe id="report-frame" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiZDU4M2FhNWQtNjgwYS00MzhkLTkyODUtZTFjNDY0ZDljZDgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiMjQ5YzI5MTAtMDRmZS00MzBjLWI2ZDgtNmZhMTgxMDc0YzRmIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9" 
       allowfullscreen></iframe>
     <p class="note">Report created in Power BI and published using GitHub Pages.</p>
   </div>
@@ -26,12 +27,14 @@
   <script>
     function loadReport(name) {
       const titles = {
+        marketingcmp :"Sales Analytics",
         churnrate: "Customer Churn Rate",
         initial: "Initial Project",
         day1: "Day 1 Project",
         salary: "Salary Project"
       };
-      const links = {                                                            
+      const links = {   
+        marketingcmp : "https://app.powerbi.com/view?r=eyJrIjoiZDU4M2FhNWQtNjgwYS00MzhkLTkyODUtZTFjNDY0ZDljZDgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
         churnrate : "https://app.powerbi.com/view?r=eyJrIjoiZDU4M2FhNWQtNjgwYS00MzhkLTkyODUtZTFjNDY0ZDljZDgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
         initial: "https://app.powerbi.com/view?r=eyJrIjoiODcyODE4MTMtM2Y5YS00MTJiLWE0ZDMtMzE4NTA3OGNjZmE5IiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
         day1: "https://app.powerbi.com/view?r=eyJrIjoiOWE1MDYyYWMtZTUxNi00NThmLWE2NGMtYmVmYjhiZDUyZjgyIiwidCI6IjUyMDk1N2MxLWZjZWQtNGM0Ny1iZWUwLTdjZjhiODhlZjZiZSJ9",
@@ -43,3 +46,7 @@
   </script>
 </body>
 </html>
+
+
+
+
